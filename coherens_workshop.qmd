@@ -1,0 +1,121 @@
+---
+format: 
+  revealjs:
+    embed-resources: true # note, chackboard option, even commented, seemed to be an issue with embed-resources..., see https://claudiu.psychlab.eu/post/revealjs-presentations-with-quarto-a-template/
+    transition: slide 
+    slide-number: c
+    progress: true
+    theme: [default] # see comment in the custom.scss file
+    #css: fonts.css # needed to import the Right Grotesk Compact font
+    #theme: default
+    margin: 0.1
+    width: 1200
+    output-file: COHERENS-Workshop.html
+    #smaller: true 
+editor: source
+from: markdown+emoji
+execute: 
+  cache: true # need to put it to false when there is an update of data WITHOUT a change of code
+---
+
+# COHERENS Workshop {background-color="black"}
+
+Ludovic Lepers (MFC) & Florian Ricour (ECOMOD)
+
+# JupyterHub on ECMWF {background-color="black"}
+
+- How to get there?
+- What is JupyterHub?
+- Advantages
+
+## Getting there
+
+- Need an ECMWF account
+- Access to local terminal
+  1. `tsh login --proxy=jump.ecmwf.int`
+  2. `ssh -X hpc-login`
+- [Tutorial](https://naturalsciences.sharepoint.com/sites/ECOMOD/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FECOMOD%2FShared%20Documents%2FECMWF%2Fjupyterlab%5Fecmwf%2Epdf&parent=%2Fsites%2FECOMOD%2FShared%20Documents%2FECMWF) to connect to JupyterHub
+- Multiple server [options](https://confluence.ecmwf.int/display/UDOC/Configuring+your+Jupyter+session+on+HPCF+or+ECS) (Profile, CPU number, session duration, ...)
+
+## [JupyterHub](https://jupyter.org/hub)
+
+- Demo on [ECMWF JupyterHub](https://jupyterhub.ecmwf.int)
+  - Notebook
+  - General structure
+
+- HPC [Filesystems](https://confluence.ecmwf.int/display/UDOC/HPC2020%3A+Filesystems)
+
+```{r}
+#| label: file-system-table
+#| echo: false
+#| message: false
+#| warning: false
+file_system <- c('HOME', 'PERM', 'HPCPERM', 'SCRATCH', 'TMPDIR')
+features <- c('Backed up', 'No back up', 'No back up', 'No back up', 'Deleted at the end of session/job')
+quota <- c('10GB', '500GB', '100GB/1TB', '50TB/2TB', '3GB/up to 40 GB')
+
+library(tibble)
+library(gt)
+
+tb <- tibble(file_system, features, quota)
+# Create and format the table
+gt_table <- tb %>%
+  gt() %>%
+  cols_label(
+    file_system = "File System",
+    features = "Features",
+    quota = "Quota"
+  ) %>%
+  tab_style(
+    style = cell_fill(color = "#f0f0f0"),
+    locations = cells_body(rows = seq(1, nrow(tb), 2))
+  ) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_column_labels()
+  ) %>%
+  tab_style(
+    style = cell_text(color = "navy"),
+    locations = cells_body(columns = "file_system")
+  ) %>%
+  tab_options(
+    column_labels.background.color = "#e0e0e0",
+    table.border.top.style = "hidden",
+    table.border.bottom.style = "hidden"
+  ) |>
+  opt_css(
+  css = "
+    .gt_table {
+      margin-left: 45px !important;
+      margin-right: auto !important;
+    }
+  "
+)
+
+# Display the table
+gt_table
+```
+
+
+
+## Why you should think it's cool :grin:
+
+1. Not because I say so (oh well)
+2. Recent service (April 2024) -> You're on top of the game !
+3. Easier than a strict local terminal (GUI, easy upload, ...)
+4. Session up to 7 days ! Just go the the URL and you're back online !
+5. Save time from heavy uploads on SharePoint (Erk)
+6. **Use it for other tasks than big COHERENS simulations**
+7. Preserve your laptop -> run big python/R codes on ECMWF
+8. You want to go home but need to wait for a script to finish? -> ECMWF
+9. Take advantage of the HPC Filesystem at your disposal
+
+
+# AI tools {background-color="black"}
+
+- What's a Large Language Model (LLM)?
+- Prompt Engineering (give some example outputs)
+- Examples (Claude AI, ChatGPT, GitHub Copilot)
+- Advantages and drawbacks
+- Why you should consider using it for your work
+

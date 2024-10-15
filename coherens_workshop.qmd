@@ -119,3 +119,21 @@ gt_table
 - Advantages and drawbacks
 - Why you should consider using it for your work
 
+
+
+## Large Langage Model (LLM)s ?
+
+- Most of the AI that you can "talk" with
+- Trained to do langage processing 
+- Large Langage Model => Huge model with **billions** of parameters (GPT3 had 175 billion parameters)
+- The big ones are proprietary => we do not know the detail (some are "open-weigth, not the same as "open-source")
+
+## How do they works ? Transforming a text in something a computer can understand
+
+- Tokenization : Splitting the text into "tokens". 
+INSERT DIAGRAM
+- Vectorization: Transforming the token into vectors (GPT3 => 12 288 dimension)
+- Famous example : King - Man + Women = Queen
+- These are trained too 
+
+

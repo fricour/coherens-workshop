@@ -108,7 +108,7 @@ gt_table
 1. Not because I say so (oh well)
 :::
 ::: {.fragment .fade-in-then-semi-out}
-2. Recent service (April 2024) -> You're on top of the game !
+2. Recent service (April 2024) $\rightarrow$ You're on top of the game !
 :::
 ::: {.fragment .fade-in-then-semi-out}
 3. Easier than a strict local terminal (GUI, easy upload, ...)
@@ -177,12 +177,10 @@ Every TLU connected to every input = **fully connected layer** or **dense layer*
 ![](images/more_tlus.jpg){width=600}
 :::
 
-::: {style="position:absolute;top:30%;left:60%;font-size:30px;"}
-$$
-h_{\mathbf{W},\mathbf{b}}(\mathbf{X}) = \phi(\mathbf{X}\mathbf{W} + \mathbf{b})\\
-\phi = \text{activation function}\\
-\mathbf{b} = \text{bias vector}, \text{one value per neuron}
-$$
+::: {style="position:absolute;top:25%;left:50%;font-size:30px;"}
+* $h_{\mathbf{W},\mathbf{b}}(\mathbf{X}) = \phi(\mathbf{X}\mathbf{W} + \mathbf{b})$
+* $\mathbf{b} = \text{bias vector}, \text{one value per neuron}$
+* $\phi = \text{activation function}$
 :::
 
 ::: notes
@@ -194,8 +192,8 @@ The main purpose of a bias neuron is to shift the activation function left or ri
 * Default activation: Bias allows a neuron to have a default "firing" value even when all inputs are zero.
 :::
 
-::: {style="position:absolute;top:50%;left:60%;font-size:30px;"}
-![](images/activation_function_cropped.jpg){}
+::: {style="position:absolute;top:45%;left:50%;font-size:30px;"}
+![](images/activation.jpg){width=1200}
 :::
 
 ## Multilayer Perceptron - XOR example
@@ -217,17 +215,26 @@ ANN with deep stack of hidden layers = **deep neural** network
 Famous optimization algorithm - gradient descent (iterative process)
 
 ::: {style="position:absolute;top:20%;left:0%;font-size:40px;"}
+::: {.fragment .fade-out}
 ![](images/cost_function.jpg){width=600}
 :::
+:::
 
-::: {style="position:absolute;top:20%;left:55%;font-size:30px;"}
+::: {style="position:absolute;top:25%;left:50%;font-size:30px;"}
 * $\boldsymbol{\theta} = \text{parameter vector}$
 * $\eta = \text{learning step} = \text{learning rate}$
 * $\boldsymbol{\theta}^{(\text{next step})} = \boldsymbol{\theta} - \eta \nabla_{\boldsymbol{\theta}} \text{Cost}(\boldsymbol{\theta})$
+* $\text{If Cost}(\boldsymbol{\theta}) = \text{RMSE}(\boldsymbol{\theta})$ 
+  * $\text{min Cost}(\boldsymbol{\theta}) = min \sqrt{\frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2}$
+:::
+
+::: {.fragment .fade-in}
+::: {style="position:absolute;top:20%;left:0%;font-size:40px;"}
+![](images/early_stop.jpg){width=600}
+:::
 :::
 
 
 ## A glimpse into what's inside an ANN
 
 [TensorFlow Playground](https://playground.tensorflow.org/){preview-link="true"}
-

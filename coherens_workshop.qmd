@@ -11,14 +11,14 @@ format:
     margin: 0.1
     width: 1200
     output-file: COHERENS-Workshop.html
-    #smaller: true 
+    smaller: true
 editor: source
 from: markdown+emoji
 execute: 
   cache: true # need to put it to false when there is an update of data WITHOUT a change of code
 ---
 
-# COHERENS Workshop {background-color="black"}
+# COHERENS Workshop{background-color="black"}
 
 Ludovic Lepers (MFC) & Florian Ricour (ECOMOD)
 
@@ -52,7 +52,7 @@ Ludovic Lepers (MFC) & Florian Ricour (ECOMOD)
 #| warning: false
 file_system <- c('HOME', 'PERM', 'HPCPERM', 'SCRATCH', 'TMPDIR')
 features <- c('Backed up', 'No back up', 'No back up', 'No back up', 'Deleted at the end of session/job')
-quota <- c('10GB', '500GB', '100GB/1TB', '50TB/2TB', '3GB/up to 40 GB')
+quota <- c('10 GB', '500 GB', '100 GB*/1 TB', '50 TB*/2 TB', '3 GB by default')
 
 library(tibble)
 library(gt)
@@ -83,6 +83,12 @@ gt_table <- tb %>%
     table.border.top.style = "hidden",
     table.border.bottom.style = "hidden"
   ) |>
+  tab_header(
+    title = "File System Features"
+  ) |>
+  tab_source_note(
+    source_note = "* for users without HPC access such as ECS"
+  ) |>
   opt_css(
   css = "
     .gt_table {
@@ -96,26 +102,139 @@ gt_table <- tb %>%
 gt_table
 ```
 
-
-
 ## Why you should think it's cool :grin:
 
+::: {.fragment .fade-in-then-semi-out}
 1. Not because I say so (oh well)
-2. Recent service (April 2024) -> You're on top of the game !
+:::
+::: {.fragment .fade-in-then-semi-out}
+2. Recent service (April 2024) $\rightarrow$ You're on top of the game !
+:::
+::: {.fragment .fade-in-then-semi-out}
 3. Easier than a strict local terminal (GUI, easy upload, ...)
+:::
+::: {.fragment .fade-in-then-semi-out}
 4. Session up to 7 days ! Just go the the URL and you're back online !
+:::
+::: {.fragment .fade-in-then-semi-out}
 5. Save time from heavy uploads on SharePoint (Erk)
+:::
+::: {.fragment .fade-in-then-semi-out}
 6. **Use it for other tasks than big COHERENS simulations**
-7. Preserve your laptop -> run big python/R codes on ECMWF
-8. You want to go home but need to wait for a script to finish? -> ECMWF
-9. Take advantage of the HPC Filesystem at your disposal
+:::
+::: {.fragment .fade-in-then-semi-out}
+7. Preserve your laptop $\rightarrow$ run big python/R codes on ECMWF
+:::
+::: {.fragment .fade-in-then-semi-out}
+8. You want to go home but need to wait for a script to finish ? $\rightarrow$ ECMWF
+:::
+::: {.fragment .fade-in-then-semi-out}
+9. Take advantage of the HPC filesystem at your disposal
+:::
+::: {.fragment .fade-in-then-semi-out}
+10. I have plenty of other reasons if you are still not convinced
+:::
+
+# What's AI really? {background-color="black"}
+
+Lovely transition
+
+## AI is a vague terminology
+
+[![](images/what_is_ai.png)](https://cgarbin.github.io/deep-learning-for-image-processing-overview/){fig-align="left"}
+
+::: {.fragment .fade-in}
+::: {style="position:absolute;top:30%;left:55%;font-size:40px;"}
+![](images/ann.jpg)
+<strong>Artificial Neural Network (ANN)</strong><br>
+:::
+:::
+
+## A simple ANN - The Perceptron
+
+Based on an artificial neuron called **threshold logic unit** (TLU)
+
+::: {style="position:absolute;top:20%;left:-10%;font-size:40px;"}
+![](images/tlu.jpg){width=800}
+:::
 
 
-# AI tools {background-color="black"}
+::: {style="position:absolute;top:40%;left:60%;font-size:30px;"}
+$$
+\text{heaviside}(z) = 
+\begin{cases}
+0 & \text{if } z < 0 \\
+1 & \text{if } z \geq 0
+\end{cases}
+$$
+:::
 
-- What's a Large Language Model (LLM)?
-- Prompt Engineering (give some example outputs)
-- Examples (Claude AI, ChatGPT, GitHub Copilot)
-- Advantages and drawbacks
-- Why you should consider using it for your work
+## Perceptron composed of one or more TLUs
 
+Every TLU connected to every input = **fully connected layer** or **dense layer**
+
+::: {style="position:absolute;top:20%;left:0%;font-size:40px;"}
+![](images/more_tlus.jpg){width=600}
+:::
+
+::: {style="position:absolute;top:25%;left:50%;font-size:30px;"}
+* $h_{\mathbf{W},\mathbf{b}}(\mathbf{X}) = \phi(\mathbf{X}\mathbf{W} + \mathbf{b})$
+* $\mathbf{b} = \text{bias vector}, \text{one value per neuron}$
+* $\phi = \text{activation function}$
+:::
+
+::: notes
+Purpose of bias neurons:
+
+The main purpose of a bias neuron is to shift the activation function left or right, which can be crucial for successful learning. Here's why this is important:
+* Flexibility: Bias allows the model to fit the data better by shifting the activation function. Without bias, the function would always pass through the origin (0,0).
+* Learning power: Bias increases the capacity of the network to learn complex patterns by providing an additional parameter to adjust.
+* Default activation: Bias allows a neuron to have a default "firing" value even when all inputs are zero.
+:::
+
+::: {style="position:absolute;top:45%;left:50%;font-size:30px;"}
+![](images/activation.jpg){width=1200}
+:::
+
+## Multilayer Perceptron - XOR example
+
+::: {style="position:absolute;top:15%;left:0%;font-size:40px;"}
+![](images/multilayer_perceptron.jpg){width=600}
+:::
+
+::: {style="position:absolute;top:15%;left:55%;font-size:40px;"}
+![](images/xor.jpg){width=600}
+:::
+
+::: {style="position:absolute;top:80%;left:55%;font-size:20px;"}
+ANN with deep stack of hidden layers = **deep neural** network
+:::
+
+## Tweaking parameters to minimize the cost
+
+Famous optimization algorithm - gradient descent (iterative process)
+
+::: {style="position:absolute;top:20%;left:0%;font-size:40px;"}
+::: {.fragment .fade-out}
+![](images/cost_function.jpg){width=600}
+:::
+:::
+
+::: {style="position:absolute;top:25%;left:50%;font-size:30px;"}
+* $\boldsymbol{\theta} = \text{parameter vector}$
+* $\eta = \text{learning step} = \text{learning rate}$
+* $\boldsymbol{\theta}^{(\text{next step})} = \boldsymbol{\theta} - \eta \nabla_{\boldsymbol{\theta}} \text{Cost}(\boldsymbol{\theta})$
+* $\text{If Cost}(\boldsymbol{\theta}) = \text{RMSE}(\boldsymbol{\theta})$ 
+  * $\text{min Cost}(\boldsymbol{\theta}) = min \sqrt{\frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2}$
+:::
+
+::: {.fragment .fade-in}
+::: {style="position:absolute;top:20%;left:0%;font-size:40px;"}
+![](images/early_stop.jpg){width=600}
+:::
+:::
+
+
+## A glimpse into what's inside an ANN
+
+[TensorFlow Playground](https://playground.tensorflow.org/){preview-link="true"}

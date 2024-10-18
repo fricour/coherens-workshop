@@ -10,25 +10,27 @@ format:
     #theme: default
     margin: 0.1
     width: 1200
-    output-file: COHERENS-Workshop.html
+    output-file: coherens_workshop.html
     smaller: true
-editor: source
+editor: source 
+  #render-on-save: true
 from: markdown+emoji
 execute: 
   cache: true # need to put it to false when there is an update of data WITHOUT a change of code
 ---
 
-# COHERENS Workshop{background-color="black"}
+# COHERENS workshop #2{background-color="#cc785cff"}
 
-Ludovic Lepers (MFC) & Florian Ricour (ECOMOD)
+Florian Ricour (ECOMOD) <br>
+Ludovic Lepers (MFC)
 
-# JupyterHub on ECMWF {background-color="black"}
+# Part I {background-color="#cc785cff"}
 
-- How to get there?
-- What is JupyterHub?
-- Advantages
+::: {style="position:absolute;top:70%;left:0%;font-size:40px;"}
+JupyterHub on ECMWF
+::: 
 
-## Getting there
+## A clear procedure to get there
 
 - Need an ECMWF account
 - Access to local terminal
@@ -37,7 +39,7 @@ Ludovic Lepers (MFC) & Florian Ricour (ECOMOD)
 - [Tutorial](https://naturalsciences.sharepoint.com/sites/ECOMOD/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FECOMOD%2FShared%20Documents%2FECMWF%2Fjupyterlab%5Fecmwf%2Epdf&parent=%2Fsites%2FECOMOD%2FShared%20Documents%2FECMWF) to connect to JupyterHub
 - Multiple server [options](https://confluence.ecmwf.int/display/UDOC/Configuring+your+Jupyter+session+on+HPCF+or+ECS) (Profile, CPU number, session duration, ...)
 
-## [JupyterHub](https://jupyter.org/hub)
+## Let's try [JupyterHub](https://jupyter.org/hub)!
 
 - Demo on [ECMWF JupyterHub](https://jupyterhub.ecmwf.int)
   - Notebook
@@ -102,42 +104,54 @@ gt_table <- tb %>%
 gt_table
 ```
 
-## Why you should think it's cool :grin:
+## Conclusion on Part I
 
-::: {.fragment .fade-in-then-semi-out}
-1. Not because I say so (oh well)
-:::
-::: {.fragment .fade-in-then-semi-out}
-2. Recent service (April 2024) $\rightarrow$ You're on top of the game !
-:::
-::: {.fragment .fade-in-then-semi-out}
-3. Easier than a strict local terminal (GUI, easy upload, ...)
-:::
-::: {.fragment .fade-in-then-semi-out}
-4. Session up to 7 days ! Just go the the URL and you're back online !
-:::
-::: {.fragment .fade-in-then-semi-out}
-5. Save time from heavy uploads on SharePoint (Erk)
-:::
-::: {.fragment .fade-in-then-semi-out}
-6. **Use it for other tasks than big COHERENS simulations**
-:::
-::: {.fragment .fade-in-then-semi-out}
-7. Preserve your laptop $\rightarrow$ run big python/R codes on ECMWF
-:::
-::: {.fragment .fade-in-then-semi-out}
-8. You want to go home but need to wait for a script to finish ? $\rightarrow$ ECMWF
-:::
-::: {.fragment .fade-in-then-semi-out}
-9. Take advantage of the HPC filesystem at your disposal
-:::
-::: {.fragment .fade-in-then-semi-out}
-10. I have plenty of other reasons if you are still not convinced
+::: {.incremental}
+
+- GUI is more user-friendly than a cold heartless terminal
+- Take advantage of the HPC filesystem at your disposal
+- Recent service (April 2024), you will look so damn cool !
+- Session up to 7 days, just go the URL and you're back online
+- Use it for other tasks than model simulations
+- Save time from heavy downloads/uploads from/to Sharepoint (Erk)
+- Preserve your laptop and run big python/R codes on ECMWF
+- You want to go home but need to wait for a script to finish ? $\rightarrow$ ECMWF
+- I like it and I hope you'll use it !
 :::
 
-# What's AI really? {background-color="black"}
 
-Lovely transition
+# Short break {background-color="#cc785cff"}
+
+# Part II {background-color="#cc785cff"}
+
+::: {style="position:absolute;top:70%;left:0%;font-size:40px;"}
+Artificial Intelligence, how smart is it?
+:::
+
+## Who hasn't used ChatGPT here?
+
+::: {.fragment .fade-in-then-out}
+<!--![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjVwdHdtemhlMmdqOGJtY3oyemQ3cXMwMjJ1OG9hNmg4MWxvdHY0byZlcD12MV9naWZzX3NlYXJjaCZjdD1n/EouEzI5bBR8uk/giphy.gif)-->
+![](https://media.giphy.com/media/j4lJOuwvAzyRcnWrFi/giphy.gif?cid=790b76114ggiswqfx07dbvx906s4qfy2h30e3j96dvw3qeul&ep=v1_gifs_search&rid=giphy.gif&ct=g)
+:::
+
+::: {.fragment .fade-in}
+::: {style="position:absolute;top:20%;left:0%;font-size:30px;"}
+* chatGPT (you know it)
+* Claude.ai (20$/month well spent)
+* GitHub Copilot (code completion)
+* Perplexity (search engine)
+* NotebookLM (nice podcasts)
+* DeepL (translation)
+* Many more
+:::
+:::
+
+::: {.fragment .fade-in}
+::: {style="position:absolute;top:40%;left:50%;"}
+<span style="background-color:#cc785cff; color:white; padding:10px 20px; border-radius:15px; display:inline-block; font-size:40px;">Artificial intelligence</span>
+:::
+:::
 
 ## AI is a vague terminology
 
@@ -214,10 +228,9 @@ ANN with deep stack of hidden layers = **deep neural** network
 
 Famous optimization algorithm - gradient descent (iterative process)
 
+::: {.fragment .fade-in-then-out}
 ::: {style="position:absolute;top:20%;left:0%;font-size:40px;"}
-::: {.fragment .fade-out}
 ![](images/cost_function.jpg){width=600}
-:::
 :::
 
 ::: {style="position:absolute;top:25%;left:50%;font-size:30px;"}
@@ -227,14 +240,80 @@ Famous optimization algorithm - gradient descent (iterative process)
 * $\text{If Cost}(\boldsymbol{\theta}) = \text{RMSE}(\boldsymbol{\theta})$ 
   * $\text{min Cost}(\boldsymbol{\theta}) = min \sqrt{\frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2}$
 :::
+:::
 
 ::: {.fragment .fade-in}
 ::: {style="position:absolute;top:20%;left:0%;font-size:40px;"}
 ![](images/early_stop.jpg){width=600}
 :::
+
+::: {style="position:absolute;top:25%;left:50%;font-size:30px;"}
+* $\boldsymbol{\theta} = \text{parameter vector}$
+* $\eta = \text{learning step} = \text{learning rate}$
+* $\boldsymbol{\theta}^{(\text{next step})} = \boldsymbol{\theta} - \eta \nabla_{\boldsymbol{\theta}} \text{Cost}(\boldsymbol{\theta})$
+* $\text{If Cost}(\boldsymbol{\theta}) = \text{RMSE}(\boldsymbol{\theta})$ 
+  * $\text{min Cost}(\boldsymbol{\theta}) = min \sqrt{\frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2}$
+:::
+:::
+
+## Have you ever seen an ANN in action?
+
+[TensorFlow Playground](https://playground.tensorflow.org/){preview-link="true"}
+
+## Now that we know you've all used chatGPT
+
+::: {style="position:absolute;top:20%;left:0%;font-size:30px;"}
+* chatGPT (you know it)
+* Claude.ai (20$/month well spent)
+* GitHub Copilot (code completion)
+* Perplexity (search engine)
+* NotebookLM (nice podcasts)
+* DeepL (translation)
+* Many more
+:::
+
+::: {.fragment .fade-in}
+::: {style="position:absolute;top:40%;left:50%;"}
+<span style="background-color:#cc785cff; color:white; padding:10px 20px; border-radius:15px; display:inline-block; font-size:40px;">Large Language Models (LLMs)</span>
+:::
 :::
 
 
-## A glimpse into what's inside an ANN
+# Part III {background-color="#cc785cff"}
 
-[TensorFlow Playground](https://playground.tensorflow.org/){preview-link="true"}
+::: {style="position:absolute;top:70%;left:0%;font-size:40px;"}
+What's all the fuss about?
+::: 
+
+<!-- Ludo's part -->
+
+# Part IV {background-color="#cc785cff"}
+
+::: {style="position:absolute;top:70%;left:0%;font-size:40px;"}
+Examples and best practices
+::: 
+
+## The less the model has to guess the better
+
+[Non exhaustive list](https://platform.openai.com/docs/guides/prompt-engineering/six-strategies-for-getting-better-results){preview-link="false"}
+
+::: {.incremental}
+* Write clear instructions
+* Provide reference text and/or code 
+* Split complex tasks into simpler subtasks
+* Give the model time to "think" by asking for a "chain of thought"
+* Tell the model what to do, rather than what not to do
+* ...
+:::
+
+## It feels like coding with 4 hands
+
+
+
+## Shiny app built from scratch 
+
+Amazingly fast.
+
+![](gif/shiny.gif)
+
+# Time to eat ! {background-color="#cc785cff"}

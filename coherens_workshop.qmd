@@ -315,5 +315,3 @@ Examples and best practices
 Amazingly fast.
 
 ![](gif/shiny.gif)
-
-# Time to eat ! {background-color="#cc785cff"}

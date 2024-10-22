@@ -282,10 +282,42 @@ Famous optimization algorithm - gradient descent (iterative process)
 # Part III {background-color="#cc785cff"}
 
 ::: {style="position:absolute;top:70%;left:0%;font-size:40px;"}
-What's all the fuss about?
+LLM, What's all the fuss about?
 ::: 
 
 <!-- Ludo's part -->
+ 
+## Large Langage Model (LLM)s ?
+::: {style="position:absolute;top:20%;left:0%;font-size:30px;"}
+  - Specialized in langage processing => Working with text written by human
+  - Large Langage Model => Huge model with **billions** of parameters (GPT3 had 175 billion parameters)
+  - The big ones are proprietary => we do not know the detail (some are "open-weigth, not the same as "open-source")
+:::
+
+
+## How do they works ? Transforming a text in something a computer can understand
+ 
+- Tokenization : Splitting the text into "tokens". 
+INSERT DIAGRAM
+- Vectorization: Transforming the token into vectors (GPT3 => 12 288 dimension)
+- Famous example : King - Man + Women = Queen
+- These are trained too 
+
+## How do they works ? Transfomer principle
+
+- GPT => Generative pretrained transfomers
+- Neural network with many layer. 
+- The model as as input a series of token and as output a token called "context window"
+- All the token pass trought all of them and are changed based on the others
+DIAGRAM WORD IMPACTING EACH OTHERS
+- At the end the model produce a vector transformed in a probability distribution. A token is chosen from there.
+- When the previous token is added, the then new "context window" can be used a new input => text can be generated "forever"
+- This is how the model is trained => try to predict the next token, then backpropagation => TRAINED TO DO THE MOST PROBABLE, NOT THE MOST CORRECT
+-
+
+
+
+- Kinds of "knowledge" => 
 
 # Part IV {background-color="#cc785cff"}
 
@@ -315,3 +347,5 @@ Examples and best practices
 Amazingly fast.
 
 ![](gif/shiny.gif)
+
+# Time to eat ! {background-color="#cc785cff"}

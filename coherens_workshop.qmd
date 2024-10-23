@@ -289,19 +289,24 @@ LLM, What's all the fuss about?
  
 ## Large Langage Model (LLM)s ?
 ::: {style="position:absolute;top:20%;left:0%;font-size:30px;"}
-  - Specialized in langage processing => Working with text written by human
-  - Large Langage Model => Huge model with **billions** of parameters (GPT3 had 175 billion parameters)
-  - The big ones are proprietary => we do not know the detail (some are "open-weigth, not the same as "open-source")
+  - Specialized in langage processing &rarr; Working with text written by human
+  - Large Langage Model &rarr; Huge model with **billions** of parameters (GPT3 had 175 billion parameters)
+  - The big ones are proprietary &rarr; we do not know the detail (some are "open-weigth, not the same as "open-source")
 :::
 
 
 ## How do they works ? Transforming a text in something a computer can understand
  
 - Tokenization : Splitting the text into "tokens". 
-INSERT DIAGRAM
-- Vectorization: Transforming the token into vectors (GPT3 => 12 288 dimension)
-- Famous example : King - Man + Women = Queen
+- Example : <https://tiktokenizer.vercel.app/?model=text-davinci-003>
+
+. . .
+
+::: {.incremental}
+- Vectorization: Each token receive a vector (GPT3 => 12 288 dimension)
+- This vector has a sementic meaning (Famous example : `King - Man + Women = Queen`)
 - These are trained too 
+:::
 
 ## How do they works ? Transfomer principle
 
@@ -309,15 +314,24 @@ INSERT DIAGRAM
 - Neural network with many layer. 
 - The model as as input a series of token and as output a token called "context window"
 - All the token pass trought all of them and are changed based on the others
-DIAGRAM WORD IMPACTING EACH OTHERS
+- "A black dog" &rarr; dog vector will be modified to account for the fact that the dog is black (simplification) 
 - At the end the model produce a vector transformed in a probability distribution. A token is chosen from there.
 - When the previous token is added, the then new "context window" can be used a new input => text can be generated "forever"
 - This is how the model is trained => try to predict the next token, then backpropagation => TRAINED TO DO THE MOST PROBABLE, NOT THE MOST CORRECT
--
+- Kinds of "knowledge" => the one inside of the weigth vs the one in the context window(!limited in size)
+EXAMPLE INSIDE AND OUTSIDE KNOWLEDGE
+- Usually the model is better at retrieving information at the end and the start of the context window
+- LLM are then usable for many tasks (code, chatbot)
 
+## Example of a chatbot
 
+- "Fine tuning" the model => Reinforcement learning human feedback (RLHF)
+- Human looks at many answer and says which one are good and which ones are bad
+- This prevent the model to says "dangerous" stuff, but reduce its capacities a bit => it has also been showed to privilegie human manipulation about exactitude
+MODELS ARE TRAINED TO GIVE NICE LOOKING ANSWER TO HUMAN QUESTIONS, AND THEY HAVE BECCOME GOOD AT IT...
+- Then the model is told to "simulate" a conversion between a virtual assisstant and a human. There is some instruction (invisible) at the start of the conversation
+- It was/is possible sometime to jailbrake the instruction (example with torrent website)
 
-- Kinds of "knowledge" => 
 
 # Part IV {background-color="#cc785cff"}
 
@@ -337,6 +351,25 @@ Examples and best practices
 * Tell the model what to do, rather than what not to do
 * ...
 :::
+
+## Some other example
+
+::: {.incremental}
+* Bing chat can go on the internet
+* 
+:::
+
+## Generating image from text (or image)
+
+- cf bing chat, Dall-e, midjourney
+- openweigth models exist: flux, stable diffusion... ! needs a decent GPU to have image generates in less than 10 minutes
+- Videos models are quickly improving
+
+## Generating music from text
+
+- Suno, Udio...
+- cf COHERENS rap
+
 
 ## It feels like coding with 4 hands
 

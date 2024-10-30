@@ -23,7 +23,7 @@ execute:
 
 Florian Ricour (ECOMOD) <br>
 Ludovic Lepers (MFC)
-
+<!--Disclaimer: situation au 15/10/2024-->
 # Part I {background-color="#cc785cff"}
 
 ::: {style="position:absolute;top:70%;left:0%;font-size:40px;"}
@@ -363,23 +363,23 @@ Examples and best practices
 * ...
 :::
 
-## Some other example
+## Some other tips
 
 ::: {.incremental}
-* Bing chat can go on the internet
-* 
+* Testing multiple models in case of a complex task 
+* Thinking a bit how to interact (discussing about equation? The model can understand LaTex)
 :::
 
 ## Generating image from text (or image)
 
 - cf bing chat, Dall-e, midjourney
-- openweigth models exist: flux, stable diffusion... ! needs a decent GPU to have image generates in less than 10 minutes
+- openweigth models exist: flux, stable diffusion... ! Needs a decent GPU to have image generated in a decent time 
 - Videos models are quickly improving
 
-## Generating music from text
+## Generating audio/music from text
 
-- Suno, Udio...
-- cf COHERENS rap
+- NotebookLM (podcast)
+- Suno, Udio... (cf COHERENS rap)
 
 
 ## It feels like coding with 4 hands

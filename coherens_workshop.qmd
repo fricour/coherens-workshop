@@ -23,7 +23,7 @@ execute:
 
 Florian Ricour (ECOMOD) <br>
 Ludovic Lepers (MFC)
-
+<!--Disclaimer: situation au 15/10/2024-->
 # Part I {background-color="#cc785cff"}
 
 ::: {style="position:absolute;top:70%;left:0%;font-size:40px;"}
@@ -282,10 +282,67 @@ Famous optimization algorithm - gradient descent (iterative process)
 # Part III {background-color="#cc785cff"}
 
 ::: {style="position:absolute;top:70%;left:0%;font-size:40px;"}
-What's all the fuss about?
+LLM, What's all the fuss about?
 ::: 
 
 <!-- Ludo's part -->
+ 
+## Large Langage Model (LLM)s ?
+::: {style="position:absolute;top:20%;left:0%;font-size:30px;"}
+  - Large Langage Model &rarr; Huge model (neural network) with **billions** of parameters (GPT3 had 175 billion parameters)
+  - Specialized in langage processing &rarr; Working with text written by human
+  - The big ones are proprietary &rarr; we do not know the detail (some are "open-weigth, not the same as "open-source")
+:::
+
+
+## How do they works ? Transforming a text in something a computer can understand
+ 
+- Tokenization : Splitting the text into "tokens". 
+- Example : <https://tiktokenizer.vercel.app/?model=text-davinci-003>
+
+. . .
+
+::: {.incremental}
+- Vectorization: Each token receive a vector (GPT3 => 12 288 dimension)
+- This vector has a sementic meaning (Famous example : `King - Man + Women = Queen`)
+- These are trained too 
+:::
+
+## How do they works ? Transfomer principle (1)
+
+- GPT => Generative pretrained transfomers
+- Transformer : Neural network with many layer. 
+- The model use as input a list of token called "context window"
+- The model produce as output a token
+- All the token pass trought the neural network and are modified based on the others token
+
+- "A black dog" &rarr; dog vector will be modified to account for the fact that the dog is black (simplification) 
+
+## How do they works ? Transfomer principle (2)
+
+- At the end the model produce a vector transformed in a probability distribution. A token is chosen from there.
+- When the previous token is added, the new context window can be used a new input => text can be generated "forever"
+- This is how the model is trained => try to predict the next token, then backpropagation => TRAINED TO DO THE MOST PROBABLE, NOT THE MOST CORRECT
+- Usually the model is better at retrieving information at the end of the context window
+- This lead to two kinds of knowledge:
+  - knowlegde learned during the training ("constant", stored in the parameters)
+  - knowledge from the context window (different at each interacation)
+
+## But how do we interact with a model?
+
+1. There is a hidden system prompt that explain to the model that it must simulate a conversation
+2. Then a sentence is given by the assistant
+3. A sentence can then be given by the user, the "prompt"
+4. Repeat 2 and 3
+
+## How to make an LLM into a chatbot
+
+- The model is "Fine tuned" &rarr; Reinforcement learning human feedback (RLHF)
+- Human looks at many answer and says which one are good and which ones are bad (Necessary, cf Bing chat)
+- This prevent the model to says "dangerous" stuff, but reduce its capacities a bit &rarr; *Models are trained to lure human to thinks that the answers looks good*
+- Then the model is told to "simulate" a conversion between a virtual assisstant and a human. There is some instruction (invisible) at the start of the conversation
+- It was/is possible sometime to jailbrake the instruction (example with torrent website)
+
 
 # Part IV {background-color="#cc785cff"}
 
@@ -306,6 +363,25 @@ Examples and best practices
 * ...
 :::
 
+## Some other tips
+
+::: {.incremental}
+* Testing multiple models in case of a complex task 
+* Thinking a bit how to interact (discussing about equation? The model can understand LaTex)
+:::
+
+## Generating image from text (or image)
+
+- cf bing chat, Dall-e, midjourney
+- openweigth models exist: flux, stable diffusion... ! Needs a decent GPU to have image generated in a decent time 
+- Videos models are quickly improving
+
+## Generating audio/music from text
+
+- NotebookLM (podcast)
+- Suno, Udio... (cf COHERENS rap)
+
+
 ## It feels like coding with 4 hands
 
 
@@ -315,3 +391,5 @@ Examples and best practices
 Amazingly fast.
 
 ![](gif/shiny.gif)
+
+# Time to eat ! {background-color="#cc785cff"}

@@ -19,12 +19,16 @@ execute:
   cache: true # need to put it to false when there is an update of data WITHOUT a change of code
 ---
 
-# COHERENS workshop #2{background-color="#cc785cff"}
+# COHERENS workshop #2 {background-color="#DFA06E"}
 
 Florian Ricour (ECOMOD) <br>
 Ludovic Lepers (MFC)
-<!--Disclaimer: situation au 15/10/2024-->
-# Part I {background-color="#cc785cff"}
+
+::: footer
+Information current as of November 13, 2024. Subject to change.
+:::
+
+# Part I {background-color="#DFA06E"}
 
 ::: {style="position:absolute;top:70%;left:0%;font-size:40px;"}
 JupyterHub on ECMWF
@@ -120,9 +124,9 @@ gt_table
 :::
 
 
-# Short break {background-color="#cc785cff"}
+# Short break {background-color="#DFA06E"}
 
-# Part II {background-color="#cc785cff"}
+# Part II {background-color="#DFA06E"}
 
 ::: {style="position:absolute;top:70%;left:0%;font-size:40px;"}
 Artificial Intelligence, how smart is it?
@@ -149,19 +153,26 @@ Artificial Intelligence, how smart is it?
 
 ::: {.fragment .fade-in}
 ::: {style="position:absolute;top:40%;left:50%;"}
-<span style="background-color:#cc785cff; color:white; padding:10px 20px; border-radius:15px; display:inline-block; font-size:40px;">Artificial intelligence</span>
+<span style="background-color:#DFA06E; color:black; padding:10px 20px; border-radius:15px; display:inline-block; font-size:40px;">Artificial intelligence</span>
 :::
 :::
 
 ## AI is a vague terminology
 
-[![](images/what_is_ai.png)](https://cgarbin.github.io/deep-learning-for-image-processing-overview/){fig-align="left"}
+::: {style="position:absolute;top:10%;left:0%;"}
+[![](images/ai-nvidia.png)
+:::
 
 ::: {.fragment .fade-in}
-::: {style="position:absolute;top:30%;left:55%;font-size:40px;"}
-![](images/ann.jpg)
-<strong>Artificial Neural Network (ANN)</strong><br>
+::: {style="position:absolute;top:35%;left:56.5%;"}
+<span style="color: white;font-size: 24px;background-color:black;border-radius: 10px"><strong>Artificial Neural Network (ANN)</strong></span>
 :::
+:::
+
+::: {.notes}
+-   Deep Blue with Kasparow -> 200M of chess positions/seconds -> high speed calculations then probabilistic choices
+-   Ex of junk mail detection
+-   ChatGPT
 :::
 
 ## A simple ANN - The Perceptron
@@ -181,6 +192,10 @@ $$
 1 & \text{if } z \geq 0
 \end{cases}
 $$
+:::
+
+::: {.notes}
+Like in a human brain, a neuron needs to be activated -> activation function
 :::
 
 ## Perceptron composed of one or more TLUs
@@ -206,8 +221,14 @@ The main purpose of a bias neuron is to shift the activation function left or ri
 * Default activation: Bias allows a neuron to have a default "firing" value even when all inputs are zero.
 :::
 
+::: {.fragment .fade-in}
 ::: {style="position:absolute;top:45%;left:50%;font-size:30px;"}
 ![](images/activation.jpg){width=1200}
+:::
+
+::: {style="position:absolute;top:90%;left:50%;font-size:30px;"}
+<span style="color: white;font-size: 24px;background-color:black;border-radius: 10px"><strong>$\rightarrow$ backpropagation algorithm (see after)</strong></span>
+:::
 :::
 
 ## Multilayer Perceptron - XOR example
@@ -216,12 +237,31 @@ The main purpose of a bias neuron is to shift the activation function left or ri
 ![](images/multilayer_perceptron.jpg){width=600}
 :::
 
-::: {style="position:absolute;top:15%;left:55%;font-size:40px;"}
-![](images/xor.jpg){width=600}
+::: {.fragment .fade-in}
+::: {style="position:absolute;top:35%;left:55%;font-size:25px;"}
+| A | B | A XOR B |
+|:-:|:-:|:-------:|
+| 0 | 0 |    0    |
+| 0 | 1 |    1    |
+| 1 | 0 |    1    |
+| 1 | 1 |    0    |
+:::
+
+::: {style="position:absolute;top:15%;left:75%;font-size:40px;"}
+![](images/xor.jpg){width=280}
 :::
 
 ::: {style="position:absolute;top:80%;left:55%;font-size:20px;"}
 ANN with deep stack of hidden layers = **deep neural** network
+:::
+:::
+
+::: {.notes}
+-   Introduce the term of truth table
+-   XOR is a function and the CNN tries to approximate this function
+-   h1 = (x1 x2) (1 1)^T -3/2
+-   h2 = (x1 x2) (1 1)^T -1/2
+-   h3 = (h1 h2) (-1 1)^T -1/2 = -h1 + h2 -1/2
 :::
 
 ## Tweaking parameters to minimize the cost
@@ -256,9 +296,25 @@ Famous optimization algorithm - gradient descent (iterative process)
 :::
 :::
 
+::: {.notes}
+-   The gradient vector points in the direction of steepest ascent
+-   The magnitude of the gradient equals the slope in that steepest
+-   Explain what is a training, validation and test set
+-   Overfitting occurs when a machine learning model learns the training data TOO WELL, including all its noise and random fluctuations, instead of learning the actual underlying pattern (cannot GENERALIZE well)
+:::
+
 ## Have you ever seen an ANN in action?
 
 [TensorFlow Playground](https://playground.tensorflow.org/){preview-link="true"}
+
+::: {.notes}
+-   each neuron cut the space in a linear fashion
+-   talk about learning rate (show a case where it is instable -> see case 3, relaunch it several times), activation function, dataset (try several), number of neurons, number of hidden layers, la loss function, ...
+-   case 1: 3rd dataset, no hidden layers (just a linear combination)
+-   case 2: 4th dataset, show that we need a more complex network (take all neurons and all layers) to achieve a good result (keep only x1, x2 and sin(x1) and sin(x2) -> manifold learning, un peu comme un cinamon roll, with learning rate = 0.03, RELU and 80% de training data)
+-   case 3: 2nd dataset, take 3 hidden layers (2-4-2) with only x1 and x2 as outputs, with a ReLU activation function and show the result with a learning rate of 0.03 and 0.1
+-   case 4: 4th dataset, same as case 2 but with x1 and x2 squared -> should fail
+:::
 
 ## Now that we know you've all used chatGPT
 
@@ -274,26 +330,23 @@ Famous optimization algorithm - gradient descent (iterative process)
 
 ::: {.fragment .fade-in}
 ::: {style="position:absolute;top:40%;left:50%;"}
-<span style="background-color:#cc785cff; color:white; padding:10px 20px; border-radius:15px; display:inline-block; font-size:40px;">Large Language Models (LLMs)</span>
+<span style="background-color:#DFA06E; color:black; padding:10px 20px; border-radius:15px; display:inline-block; font-size:40px;">Large Language Models (LLMs)</span>
 :::
 :::
 
 
-# Part III {background-color="#cc785cff"}
+# Part III {background-color="#DFA06E"}
 
 ::: {style="position:absolute;top:70%;left:0%;font-size:40px;"}
-LLM, What's all the fuss about?
+LLMs, What's all the fuss about?
 ::: 
 
-<!-- Ludo's part -->
- 
 ## Large Langage Model (LLM)s ?
 ::: {style="position:absolute;top:20%;left:0%;font-size:30px;"}
   - Large Langage Model &rarr; Huge model (neural network) with **billions** of parameters (GPT3 had 175 billion parameters)
   - Specialized in langage processing &rarr; Working with text written by human
   - The big ones are proprietary &rarr; we do not know the detail (some are "open-weigth, not the same as "open-source")
 :::
-
 
 ## How do they works ? Transforming a text in something a computer can understand
  
@@ -344,7 +397,7 @@ LLM, What's all the fuss about?
 - It was/is possible sometime to jailbrake the instruction (example with torrent website)
 
 
-# Part IV {background-color="#cc785cff"}
+# Part IV {background-color="#DFA06E"}
 
 ::: {style="position:absolute;top:70%;left:0%;font-size:40px;"}
 Examples and best practices
@@ -381,15 +434,12 @@ Examples and best practices
 - NotebookLM (podcast)
 - Suno, Udio... (cf COHERENS rap)
 
+## It feels like coding with 4 hands 
 
-## It feels like coding with 4 hands
-
-
-
-## Shiny app built from scratch 
+## Shiny app built from scratch hello
 
 Amazingly fast.
 
 ![](gif/shiny.gif)
 
-# Time to eat ! {background-color="#cc785cff"}
+# Time to eat ! {background-color="#DFA06E"}

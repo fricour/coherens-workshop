@@ -19,16 +19,16 @@ execute:
   cache: true # need to put it to false when there is an update of data WITHOUT a change of code
 ---
 
-# COHERENS workshop #2 {background-color="#DFA06E"}
+# COHERENS workshop #2 {background-color="#335c67"}
 
 Florian Ricour (ECOMOD) <br>
 Ludovic Lepers (MFC)
 
 ::: footer
-Information current as of November 13, 2024. Subject to change.
+"Information is current as of November 24, 2024, and subject to change."
 :::
 
-# Part I {background-color="#DFA06E"}
+# Part I {background-color="#335c67"}
 
 ::: {style="position:absolute;top:70%;left:0%;font-size:40px;"}
 JupyterHub on ECMWF
@@ -124,9 +124,9 @@ gt_table
 :::
 
 
-# Short break {background-color="#DFA06E"}
+# Short break {background-color="#335c67"}
 
-# Part II {background-color="#DFA06E"}
+# Part II {background-color="#335c67"}
 
 ::: {style="position:absolute;top:70%;left:0%;font-size:40px;"}
 Artificial Intelligence, how smart is it?
@@ -153,19 +153,19 @@ Artificial Intelligence, how smart is it?
 
 ::: {.fragment .fade-in}
 ::: {style="position:absolute;top:40%;left:50%;"}
-<span style="background-color:#DFA06E; color:black; padding:10px 20px; border-radius:15px; display:inline-block; font-size:40px;">Artificial intelligence</span>
+<span style="background-color:#335c67; color:white; padding:10px 20px; border-radius:15px; display:inline-block; font-size:40px;">Artificial intelligence</span>
 :::
 :::
 
 ## AI is a vague terminology
 
 ::: {style="position:absolute;top:10%;left:0%;"}
-[![](images/ai-nvidia.png)
+![](images/ai-nvidia.png)
 :::
 
 ::: {.fragment .fade-in}
 ::: {style="position:absolute;top:35%;left:56.5%;"}
-<span style="color: white;font-size: 24px;background-color:black;border-radius: 10px"><strong>Artificial Neural Network (ANN)</strong></span>
+<span style="color: white;font-size: 24px;background-color:#335c67;border-radius: 10px"><strong>Artificial Neural Network (ANN)</strong></span>
 :::
 :::
 
@@ -227,7 +227,7 @@ The main purpose of a bias neuron is to shift the activation function left or ri
 :::
 
 ::: {style="position:absolute;top:90%;left:50%;font-size:30px;"}
-<span style="color: white;font-size: 24px;background-color:black;border-radius: 10px"><strong>$\rightarrow$ backpropagation algorithm (see after)</strong></span>
+<span style="color: white;font-size: 24px;background-color:#335c67;border-radius: 10px"><strong>$\rightarrow$ backpropagation algorithm (see after)</strong></span>
 :::
 :::
 
@@ -310,8 +310,13 @@ Famous optimization algorithm - gradient descent (iterative process)
 ::: {.notes}
 -   each neuron cut the space in a linear fashion
 -   talk about learning rate (show a case where it is instable -> see case 3, relaunch it several times), activation function, dataset (try several), number of neurons, number of hidden layers, la loss function, ...
+-   observe the backpropagation algorithm: 
+1) Forward Pass: The neural network makes a prediction based on input data
+2) Error Calculation: The network compares its prediction with the correct answer and it calculates how wrong it was (the error)
+3) Moving Backward: Starting from the output layer, the algorithm moves backward through the network. At each step, it figures out how much each neuron contributed to the error
+4) Weight Updates: The network adjusts the strength (weights) of connections between neurons. Connections that contributed more to the error get adjusted more.
 -   case 1: 3rd dataset, no hidden layers (just a linear combination)
--   case 2: 4th dataset, show that we need a more complex network (take all neurons and all layers) to achieve a good result (keep only x1, x2 and sin(x1) and sin(x2) -> manifold learning, un peu comme un cinamon roll, with learning rate = 0.03, RELU and 80% de training data)
+-   case 2: 4th dataset, show that we need a more complex network (take all neurons and all layers) to achieve a good result (keep only x1, x2 and sin(x1) and sin(x2) -> manifold learning, un peu comme un cinamon roll, with learning rate = 0.03, RELU and 80% de training data). Actually, make this with 3 hidden layers (8-8-4) and learning rate of 0.1 woth 50% of training data ratio works well.
 -   case 3: 2nd dataset, take 3 hidden layers (2-4-2) with only x1 and x2 as outputs, with a ReLU activation function and show the result with a learning rate of 0.03 and 0.1
 -   case 4: 4th dataset, same as case 2 but with x1 and x2 squared -> should fail
 :::
@@ -330,74 +335,85 @@ Famous optimization algorithm - gradient descent (iterative process)
 
 ::: {.fragment .fade-in}
 ::: {style="position:absolute;top:40%;left:50%;"}
-<span style="background-color:#DFA06E; color:black; padding:10px 20px; border-radius:15px; display:inline-block; font-size:40px;">Large Language Models (LLMs)</span>
+<span style="background-color:#335c67; color:white; padding:10px 20px; border-radius:15px; display:inline-block; font-size:40px;">Large Language Models (LLMs)</span>
 :::
 :::
 
 
-# Part III {background-color="#DFA06E"}
+# Part III {background-color="#335c67"}
 
 ::: {style="position:absolute;top:70%;left:0%;font-size:40px;"}
-LLMs, What's all the fuss about?
+LLMs, what's all the fuss about?
 ::: 
 
-## Large Langage Model (LLM)s ?
-::: {style="position:absolute;top:20%;left:0%;font-size:30px;"}
-  - Large Langage Model &rarr; Huge model (neural network) with **billions** of parameters (GPT3 had 175 billion parameters)
-  - Specialized in langage processing &rarr; Working with text written by human
-  - The big ones are proprietary &rarr; we do not know the detail (some are "open-weigth, not the same as "open-source")
+## LLMs are huge neural networks
+
+-   <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>Billions</strong></span> of parameters (e.g. GPT3 - 175 billions)
+-   Specialized in language processing
+-   Most famous ones (e.g. chatGPT) are proprietary (i.e. unknown weights)
+-   Some models have open weights, in contrast to being fully open source
+
+## Converting text to machine data
+ 
+-   [Tokenization](https://tiktokenizer.vercel.app/?model=text-davinci-003){preview-link="false"} - splitting the text into <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>tokens</strong></span>
+- Vectorization - each token receives a vector (e.g. GPT3 $\rightarrow$ 12 288 dimensions)
+- Vector with semantic meaning (e.g. `King - Man + Women = Queen`)
+
+::: {.notes}
+- test with I love Barack Obama
 :::
 
-## How do they works ? Transforming a text in something a computer can understand
- 
-- Tokenization : Splitting the text into "tokens". 
-- Example : <https://tiktokenizer.vercel.app/?model=text-davinci-003>
-
-. . .
+## Transformers - Attention is all you need
 
 ::: {.incremental}
-- Vectorization: Each token receive a vector (GPT3 => 12 288 dimension)
-- This vector has a sementic meaning (Famous example : `King - Man + Women = Queen`)
-- These are trained too 
+-   GPT - <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>G</strong></span>enerative <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>P</strong></span>retrained <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>T</strong></span>ransformers
+-   A transformer is a neural network with many layers
+-   <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>Context window</strong></span> - a sequence of tokens used as model input
+-   The model outputs a token
+-   All tokens pass through the neural network and are modified based on the other tokens
+-   `black dog`, the dog vector will be modified to account for the fact that the dog is black
 :::
 
-## How do they works ? Transfomer principle (1)
+## Trained for probability, not accuracy
 
-- GPT => Generative pretrained transfomers
-- Transformer : Neural network with many layer. 
-- The model use as input a list of token called "context window"
-- The model produce as output a token
-- All the token pass trought the neural network and are modified based on the others token
+::: {.incremental}
+-   The output vector is converted into a <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>probability distribution</strong></span>, from which the next token is selected
+-   Each generated token becomes part of the new context window (i.e. continuous text generation)
+-   Model training - Tries to predict the next token then <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>backpropagation</strong></span> steps in 
+-   Trained to be the most probable, not the most accurate
+-   <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>Tip</strong></span> - the model is often better at retrieving information at the end of the context window
+-   Knowledge learned during training (constant, stored in the model parameters)
+-   Knowledge from the context window (different at each interaction)
+:::
 
-- "A black dog" &rarr; dog vector will be modified to account for the fact that the dog is black (simplification) 
+## Interaction with your new AI companion
 
-## How do they works ? Transfomer principle (2)
+1. There is a hidden system prompt that explains to the model that it must simulate a conversation
+2. Then a sentence is given by the assistant (e.g. Claude :heart:)
+3. A sentence can then be given by the user, the <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>prompt</strong></span>
+4. Repeat 2 and 3 until you are satisfied
 
-- At the end the model produce a vector transformed in a probability distribution. A token is chosen from there.
-- When the previous token is added, the new context window can be used a new input => text can be generated "forever"
-- This is how the model is trained => try to predict the next token, then backpropagation => TRAINED TO DO THE MOST PROBABLE, NOT THE MOST CORRECT
-- Usually the model is better at retrieving information at the end of the context window
-- This lead to two kinds of knowledge:
-  - knowlegde learned during the training ("constant", stored in the parameters)
-  - knowledge from the context window (different at each interacation)
+## Transforming a LLM into a chatbox
 
-## But how do we interact with a model?
+-   The model is <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>fine tuned</strong></span> with reinforcement learning human feedback
+-   Human feedback - rating model responses as good or bad (see later Bing Chat)
+-   Safety training through feedback reduces harmful outputs but may limit model capabilities
+-   Models are optimized to generate responses that appear convincing to humans
+-   Models are instructed to simulate assistant-human conversations using embedded system prompts
+-   Prompt injection risks (i.e. jailbreak) - when model safety controls are bypassed
 
-1. There is a hidden system prompt that explain to the model that it must simulate a conversation
-2. Then a sentence is given by the assistant
-3. A sentence can then be given by the user, the "prompt"
-4. Repeat 2 and 3
+::: {.fragment .fade-in}
+::: {style="position:absolute;top:10%;left:0%;"}
+![](images/BingChat.png)
+:::
+:::
 
-## How to make an LLM into a chatbot
+::: {.notes}
+- Models are instructed to simulate assistant-human conversations using embedded system prompts (see point 1 in previous slide)
+- jailbreak, example of torrent website
+:::
 
-- The model is "Fine tuned" &rarr; Reinforcement learning human feedback (RLHF)
-- Human looks at many answer and says which one are good and which ones are bad (Necessary, cf Bing chat)
-- This prevent the model to says "dangerous" stuff, but reduce its capacities a bit &rarr; *Models are trained to lure human to thinks that the answers looks good*
-- Then the model is told to "simulate" a conversion between a virtual assisstant and a human. There is some instruction (invisible) at the start of the conversation
-- It was/is possible sometime to jailbrake the instruction (example with torrent website)
-
-
-# Part IV {background-color="#DFA06E"}
+# Part IV {background-color="#335c67"}
 
 ::: {style="position:absolute;top:70%;left:0%;font-size:40px;"}
 Examples and best practices
@@ -442,4 +458,4 @@ Amazingly fast.
 
 ![](gif/shiny.gif)
 
-# Time to eat ! {background-color="#DFA06E"}
+# Lunch time ! {background-color="#335c67"}

@@ -12,6 +12,7 @@ format:
     width: 1200
     output-file: coherens_workshop.html
     smaller: true
+    multiplex: true
 editor: source 
   #render-on-save: true
 from: markdown+emoji
@@ -25,7 +26,7 @@ Florian Ricour (ECOMOD) <br>
 Ludovic Lepers (MFC)
 
 ::: footer
-"Information is current as of November 24, 2024, and subject to change."
+Information is current as of November 24, 2024, and subject to change.
 :::
 
 # Part I {background-color="#335c67"}
@@ -164,7 +165,7 @@ Artificial Intelligence, how smart is it?
 :::
 
 ::: {.fragment .fade-in}
-::: {style="position:absolute;top:35%;left:56.5%;"}
+::: {style="position:absolute;top:35%;left:55.5%;"}
 <span style="color: white;font-size: 24px;background-color:#335c67;border-radius: 10px"><strong>Artificial Neural Network (ANN)</strong></span>
 :::
 :::
@@ -177,7 +178,7 @@ Artificial Intelligence, how smart is it?
 
 ## A simple ANN - The Perceptron
 
-Based on an artificial neuron called **threshold logic unit** (TLU)
+Based on an artificial neuron called <span style="color: white;font-size: 24px;background-color:#335c67;border-radius: 10px">threshold logic unit</span> (TLU)
 
 ::: {style="position:absolute;top:20%;left:-10%;font-size:40px;"}
 ![](images/tlu.jpg){width=800}
@@ -200,7 +201,7 @@ Like in a human brain, a neuron needs to be activated -> activation function
 
 ## Perceptron composed of one or more TLUs
 
-Every TLU connected to every input = **fully connected layer** or **dense layer**
+Every TLU connected to every input = <span style="color: white;font-size: 24px;background-color:#335c67;border-radius: 10px">fully connected layer</span> or dense layer
 
 ::: {style="position:absolute;top:20%;left:0%;font-size:40px;"}
 ![](images/more_tlus.jpg){width=600}
@@ -252,7 +253,7 @@ The main purpose of a bias neuron is to shift the activation function left or ri
 :::
 
 ::: {style="position:absolute;top:80%;left:55%;font-size:20px;"}
-ANN with deep stack of hidden layers = **deep neural** network
+ANN with deep stack of hidden layers = <span style="color: white;font-size: 24px;background-color:#335c67;border-radius: 10px">deep neural network</span>
 :::
 :::
 
@@ -348,14 +349,14 @@ LLMs, what's all the fuss about?
 
 ## LLMs are huge neural networks
 
--   <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>Billions</strong></span> of parameters (e.g. GPT3 - 175 billions)
+-   <span style="color: white;background-color:#335c67;border-radius: 10px">Billions</span> of parameters (e.g. GPT3 - 175 billions)
 -   Specialized in language processing
--   Most famous ones (e.g. chatGPT) are proprietary (i.e. unknown weights)
+-   Most famous ones (e.g. GPT3) are proprietary (i.e. unknown weights)
 -   Some models have open weights, in contrast to being fully open source
 
 ## Converting text to machine data
  
--   [Tokenization](https://tiktokenizer.vercel.app/?model=text-davinci-003){preview-link="false"} - splitting the text into <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>tokens</strong></span>
+-   [Tokenization](https://tiktokenizer.vercel.app/?model=text-davinci-003){preview-link="false"} - splitting the text into <span style="color: white;background-color:#335c67;border-radius: 10px">tokens</span>
 - Vectorization - each token receives a vector (e.g. GPT3 $\rightarrow$ 12 288 dimensions)
 - Vector with semantic meaning (e.g. `King - Man + Women = Queen`)
 
@@ -366,22 +367,25 @@ LLMs, what's all the fuss about?
 ## Transformers - Attention is all you need
 
 ::: {.incremental}
--   GPT - <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>G</strong></span>enerative <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>P</strong></span>retrained <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>T</strong></span>ransformers
+-   GPT - <span style="color: white;background-color:#335c67;border-radius: 10px">G</span>enerative <span style="color: white;background-color:#335c67;border-radius: 10px">P</span>retrained <span style="color: white;background-color:#335c67;border-radius: 10px">T</span>ransformers
 -   A transformer is a neural network with many layers
--   <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>Context window</strong></span> - a sequence of tokens used as model input
+-   <span style="color: white;background-color:#335c67;border-radius: 10px">Context window</span> - a sequence of tokens used as model input
 -   The model outputs a token
 -   All tokens pass through the neural network and are modified based on the other tokens
 -   `black dog`, the dog vector will be modified to account for the fact that the dog is black
 :::
 
-## Trained for probability, not accuracy
+::: {.notes}
+Transformers treat each word in parallel
+:::
+
+## Trained for probability, not truth
 
 ::: {.incremental}
--   The output vector is converted into a <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>probability distribution</strong></span>, from which the next token is selected
+-   The output vector is converted into a <span style="color: white;background-color:#335c67;border-radius: 10px">probability distribution</span>, from which the next token is selected
 -   Each generated token becomes part of the new context window (i.e. continuous text generation)
--   Model training - Tries to predict the next token then <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>backpropagation</strong></span> steps in 
+-   Model training - Tries to predict the next token then <span style="color: white;background-color:#335c67;border-radius: 10px">backpropagation</span> steps in 
 -   Trained to be the most probable, not the most accurate
--   <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>Tip</strong></span> - the model is often better at retrieving information at the end of the context window
 -   Knowledge learned during training (constant, stored in the model parameters)
 -   Knowledge from the context window (different at each interaction)
 :::
@@ -390,12 +394,12 @@ LLMs, what's all the fuss about?
 
 1. There is a hidden system prompt that explains to the model that it must simulate a conversation
 2. Then a sentence is given by the assistant (e.g. Claude :heart:)
-3. A sentence can then be given by the user, the <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>prompt</strong></span>
+3. A sentence can then be given by the user, the <span style="color: white;background-color:#335c67;border-radius: 10px">prompt</span>
 4. Repeat 2 and 3 until you are satisfied
 
-## Transforming a LLM into a chatbox
+## Transforming a LLM into a chatbot
 
--   The model is <span style="color: white;background-color:#335c67;border-radius: 10px"><strong>fine tuned</strong></span> with reinforcement learning human feedback
+-   The model is <span style="color: white;background-color:#335c67;border-radius: 10px">fine tuned</span> with reinforcement learning human feedback
 -   Human feedback - rating model responses as good or bad (see later Bing Chat)
 -   Safety training through feedback reduces harmful outputs but may limit model capabilities
 -   Models are optimized to generate responses that appear convincing to humans
@@ -419,36 +423,139 @@ LLMs, what's all the fuss about?
 Examples and best practices
 ::: 
 
+# The science of prompting {background-color="#335c67"}
+
 ## The less the model has to guess the better
 
 [Non exhaustive list](https://platform.openai.com/docs/guides/prompt-engineering/six-strategies-for-getting-better-results){preview-link="false"}
 
-::: {.incremental}
-* Write clear instructions
-* Provide reference text and/or code 
-* Split complex tasks into simpler subtasks
-* Give the model time to "think" by asking for a "chain of thought"
-* Tell the model what to do, rather than what not to do
-* ...
+::: {.content-visible when-format="html"}
+<details>
+<summary style="color: black;">Write clear instructions</summary>
+
+:x: *Help me with my project* <br>
+:white_check_mark: *Help me write the introduction for a school project about climate change*
+
+</details>
 :::
 
-## Some other tips
+::: {.content-visible when-format="html"}
+<details>
+<summary style="color: black;">Split complex tasks into simpler subtasks</summary>
 
-::: {.incremental}
-* Testing multiple models in case of a complex task 
-* Thinking a bit how to interact (discussing about equation? The model can understand LaTex)
+:x: *Analyze a dataset and create a visualization*<br>
+:white_check_mark: *Subtask 1: Load and clean the data*<br>
+:white_check_mark: *Subtask 2: Perform statistical analysis*<br>
+:white_check_mark: *Subtask 3: Create appropriate visualizations*<br>
+:white_check_mark: *Subtask 4: Write up insights*<br><br>
+Advantage: Lower error rates compared to using a single query to perform the whole task.
+
+</details>
 :::
 
-## Generating image from text (or image)
+::: {.content-visible when-format="html"}
+<details>
+<summary style="color: black;">Give the model time to think with chain of thought reasoning (i.e. step-by-step reasoning)</summary>
 
-- cf bing chat, Dall-e, midjourney
-- openweigth models exist: flux, stable diffusion... ! Needs a decent GPU to have image generated in a decent time 
-- Videos models are quickly improving
+:question: *Problem: If it takes 6 workers 4 days to build a wall, how long would it take 8 workers?* <br>
+:bulb: *As you solve this problem:*<br>
+:white_check_mark: *First, state what information is relevant*<br>
+:white_check_mark: *Then, explain how you'll approach it*<br>
+:white_check_mark: *Show each calculation*<br>
+:white_check_mark: *Check if your answer makes sense*<br>
+:white_check_mark: *Explain why your answer is reasonable*<br><br>
 
-## Generating audio/music from text
+Note: Task decomposition can involve parallel processing, while chain of thought is typically sequential.
 
-- NotebookLM (podcast)
-- Suno, Udio... (cf COHERENS rap)
+</details>
+:::
+
+::: {.content-visible when-format="html"}
+<details>
+<summary style="color: black;">Role-based prompts</summary>
+:white_check_mark: *As a deep-sea biologist: A submersible has discovered massive die-offs of tube worms at 2000m depth near a hydrothermal vent that was previously thriving. What would be your initial assessment?*<br>
+:white_check_mark: *You're a coastal oceanographer working with a beach community: Local swimmers report unusual purple-blue floating organisms appearing in large numbers during the past week. What's your response?*<br><br>
+Advantage: This helps give more specialized answers.
+</details>
+:::
+
+::: {.content-visible when-format="html"}
+<details>
+<summary style="color: black;">Provide references</summary>
+:white_check_mark: Upload documents<br>
+:white_check_mark: Provide text and/or code examples<br>
+:white_check_mark: Even screenshots work well<br><br>
+Advantage: It reduces fake answers and match text and/or code style
+</details>
+:::
+
+::: {.content-visible when-format="html"}
+<details>
+<summary style="color: black;">Tell the model what to do, rather than what not to do</summary>
+
+:x: *Don't use complex technical terms when explaining photosynthesis*<br>
+:white_check_mark: *Explain photosynthesis using everyday language and familiar examples like sunlight helping plants make their food*
+
+</details>
+:::
+
+::: {.content-visible when-format="html"}
+<details>
+<summary style="color: black;">Context matters - start a new chat if you change topics</summary>
+
+:bulb: Remember the continuous text generation
+
+</details>
+:::
+
+## Additional prompting tips
+
+* Testing multiple models if needed (Claude 3.5 Sonnet, Claude 3 Opus, GPT-4o, GPT-o1, ...)
+* Think about your interaction with the assistant (e.g. text or code or even screenshot as input)
+* 
+
+::: {.notes}
+* Example - You want to discuss about an equation, use LaTex instead of giving a screenshot, the models understands LaTex
+:::
+
+# Images, audio and notes {background-color="#335c67"} 
+
+## Image generation from text or image
+
+* [Bing Chat](https://www.bing.com/images/create), [Dall-E](https://openai.com/index/dall-e-3/), [Midjourney](https://www.midjourney.com/home)
+* Open weights models - [Flux](https://blackforestlabs.ai/), [Stable Diffusion](https://stability.ai/) (you'll need a decent GPU)
+* [Perchance AI](https://perchance.org/ai-text-to-image-generator) (free tool)
+* [Prompt generator for image](https://huggingface.co/spaces/gokaygokay/FLUX-Prompt-Generator)
+* Video models are starting to be really good ([Runway Gen-2](https://www.youtube.com/watch?v=71-yl2SYQpg), [ChatGPT Sora](https://www.youtube.com/watch?v=HK6y8DAPN_0))
+
+::: {.notes}
+short prompt: Ocean wind farms and solar panels in between. Focus on the solar panels. In the North sea. Image fit for scientific publication.
+long prompt: Vast North Sea landscape with towering wind turbines and expansive solar panels stretching into the horizon, capturing the serene yet powerful energy of the ocean. Clear blue sky with wispy clouds, sunlight casting soft shadows. Solar panels glisten under the natural daylight, reflecting the azure waters. Cinematic wide shot with deep focus, inspired by the visual style of Christopher Nolan. Crisp, high-resolution image with minimal film grain, cool color grading emphasizing the technology and sustainability.
+:::
+
+## Audio generation from text
+
+- [NotebookLM](https://notebooklm.google/) - podcast
+{{< audio file="audio/converse_podcast.mp3" caption="Century-scale carbon sequestration flux throughout the ocean by the biological pump">}}
+- [Suno](https://suno.com/), [udio](https://www.udio.com/) - music
+{{< audio file="audio/coherens.mp3" caption="Based on COHERENS's documentation">}}
+
+## Getting the info that matters the most
+
+with [NotebookLM](https://notebooklm.google/), powered by Gemini 1.5
+
+* Upload your sources (PDFs, websites, YouTube videos, Google Docs/Slides, ...)
+* NotebookLM will summarize them and make connections (suggest questions) between topics
+* Exact quotes from sources (relies only on uploaded documents)
+* Multimodal - can analyse images and/or plots as well
+* Confidential - data not used to train the model
+* Helpful to summarize papers, anticipate questions, prepare presentations, ...
+
+::: {.notes}
+prepare presentations? At least you can check the outline of the presentation and see if it makes sense at that your key message is represented.
+:::
+
+# Coding can be fast, really fast {background-color="#335c67"}
 
 ## It feels like coding with 4 hands 
 

@@ -26,7 +26,7 @@ Florian Ricour (ECOMOD) <br>
 Ludovic Lepers (MFC)
 
 ::: footer
-Information is current as of November 24, 2024, and subject to change.
+Information is current as of November 27, 2024, and subject to change.
 :::
 
 # Part I {background-color="#335c67"}
@@ -115,7 +115,7 @@ gt_table
 
 - GUI is more user-friendly than a cold heartless terminal
 - Take advantage of the HPC filesystem at your disposal
-- Recent service (April 2024), you will look so damn cool !
+- Recent service (April 2024), be on top of the game !
 - Session up to 7 days, just go the URL and you're back online
 - Use it for other tasks than model simulations
 - Save time from heavy downloads/uploads from/to Sharepoint (Erk)
@@ -160,6 +160,10 @@ Artificial Intelligence, how smart is it?
 
 ## AI is a vague terminology
 
+::: {.footer}
+Image [source](https://www.nvidia.com/en-us/glossary/artificial-intelligence/)
+:::
+
 ::: {style="position:absolute;top:10%;left:0%;"}
 ![](images/ai-nvidia.png)
 :::
@@ -177,6 +181,10 @@ Artificial Intelligence, how smart is it?
 :::
 
 ## A simple ANN - The Perceptron
+
+::: {.footer}
+Source: Géron, A. (2022). Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow.
+:::
 
 Based on an artificial neuron called <span style="color: white;font-size: 24px;background-color:#335c67;border-radius: 10px">threshold logic unit</span> (TLU)
 
@@ -200,6 +208,10 @@ Like in a human brain, a neuron needs to be activated -> activation function
 :::
 
 ## Perceptron composed of one or more TLUs
+
+::: {.footer}
+Source: Géron, A. (2022). Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow.
+:::
 
 Every TLU connected to every input = <span style="color: white;font-size: 24px;background-color:#335c67;border-radius: 10px">fully connected layer</span> or dense layer
 
@@ -234,6 +246,10 @@ The main purpose of a bias neuron is to shift the activation function left or ri
 
 ## Multilayer Perceptron - XOR example
 
+::: {.footer}
+Source: Géron, A. (2022). Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow.
+:::
+
 ::: {style="position:absolute;top:15%;left:0%;font-size:40px;"}
 ![](images/multilayer_perceptron.jpg){width=600}
 :::
@@ -266,6 +282,10 @@ ANN with deep stack of hidden layers = <span style="color: white;font-size: 24px
 :::
 
 ## Tweaking parameters to minimize the cost
+
+::: {.footer}
+Source: Géron, A. (2022). Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow.
+:::
 
 Famous optimization algorithm - gradient descent (iterative process)
 
@@ -306,7 +326,7 @@ Famous optimization algorithm - gradient descent (iterative process)
 
 ## Have you ever seen an ANN in action?
 
-[TensorFlow Playground](https://playground.tensorflow.org/){preview-link="true"}
+[TensorFlow Playground](https://playground.tensorflow.org/){preview-link="true"} (:point_right: try it !)
 
 ::: {.notes}
 -   each neuron cut the space in a linear fashion
@@ -356,7 +376,7 @@ LLMs, what's all the fuss about?
 
 ## Converting text to machine data
  
--   [Tokenization](https://tiktokenizer.vercel.app/?model=text-davinci-003){preview-link="false"} - splitting the text into <span style="color: white;background-color:#335c67;border-radius: 10px">tokens</span>
+-   [Tokenization](https://tiktokenizer.vercel.app/?model=text-davinci-003){preview-link="false"} - splitting the text into <span style="color: white;background-color:#335c67;border-radius: 10px">tokens</span> (:point_right: try it !)
 - Vectorization - each token receives a vector (e.g. GPT3 $\rightarrow$ 12 288 dimensions)
 - Vector with semantic meaning (e.g. `King - Man + Women = Queen`)
 
@@ -398,6 +418,10 @@ Transformers treat each word in parallel
 4. Repeat 2 and 3 until you are satisfied
 
 ## Transforming a LLM into a chatbot
+
+::: {.footer}
+Image [source](https://www.theguardian.com/technology/2023/feb/17/i-want-to-destroy-whatever-i-want-bings-ai-chatbot-unsettles-us-reporter)
+:::
 
 -   The model is <span style="color: white;background-color:#335c67;border-radius: 10px">fine tuned</span> with reinforcement learning human feedback
 -   Human feedback - rating model responses as good or bad (see later Bing Chat)
@@ -448,7 +472,7 @@ Examples and best practices
 :white_check_mark: *Subtask 2: Perform statistical analysis*<br>
 :white_check_mark: *Subtask 3: Create appropriate visualizations*<br>
 :white_check_mark: *Subtask 4: Write up insights*<br><br>
-Advantage: Lower error rates compared to using a single query to perform the whole task.
+<span style="color: white;font-size: 24px;background-color:#335c67;border-radius: 10px">Advantage</span>, lower error rates compared to using a single query to perform the whole task.
 
 </details>
 :::
@@ -465,7 +489,7 @@ Advantage: Lower error rates compared to using a single query to perform the who
 :white_check_mark: *Check if your answer makes sense*<br>
 :white_check_mark: *Explain why your answer is reasonable*<br><br>
 
-Note: Task decomposition can involve parallel processing, while chain of thought is typically sequential.
+<span style="color: white;font-size: 24px;background-color:#335c67;border-radius: 10px">Note</span>, task decomposition can involve parallel processing, while chain of thought is typically sequential.
 
 </details>
 :::
@@ -475,17 +499,17 @@ Note: Task decomposition can involve parallel processing, while chain of thought
 <summary style="color: black;">Role-based prompts</summary>
 :white_check_mark: *As a deep-sea biologist: A submersible has discovered massive die-offs of tube worms at 2000m depth near a hydrothermal vent that was previously thriving. What would be your initial assessment?*<br>
 :white_check_mark: *You're a coastal oceanographer working with a beach community: Local swimmers report unusual purple-blue floating organisms appearing in large numbers during the past week. What's your response?*<br><br>
-Advantage: This helps give more specialized answers.
+<span style="color: white;font-size: 24px;background-color:#335c67;border-radius: 10px">Advantage</span>, this helps give more specialized answers.
 </details>
 :::
 
 ::: {.content-visible when-format="html"}
 <details>
-<summary style="color: black;">Provide references</summary>
+<summary style="color: black;">Provide references and/or examples</summary>
 :white_check_mark: Upload documents<br>
 :white_check_mark: Provide text and/or code examples<br>
 :white_check_mark: Even screenshots work well<br><br>
-Advantage: It reduces fake answers and match text and/or code style
+<span style="color: white;font-size: 24px;background-color:#335c67;border-radius: 10px">Advantage</span>, it reduces fake answers and match text and/or code style
 </details>
 :::
 
@@ -508,23 +532,158 @@ Advantage: It reduces fake answers and match text and/or code style
 </details>
 :::
 
-## Additional prompting tips
+## Going deeper in prompt engineering :wrench:
 
-* Testing multiple models if needed (Claude 3.5 Sonnet, Claude 3 Opus, GPT-4o, GPT-o1, ...)
-* Think about your interaction with the assistant (e.g. text or code or even screenshot as input)
-* 
+With [Claude](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) but similar rules apply to other models.
+
+<details style="margin-left: 0px;">
+<summary style="color: black;">Prompt generator and/or improver</summary>
+<details style="margin-left: 5px;">
+<summary style="color: black;">Original prompt :expressionless:</summary>
+```
+From the following list of Wikipedia article titles, identify which article this sentence came from.
+Respond with just the article title and nothing else.
+
+Article titles:
+{{titles}}
+
+Sentence to classify:
+{{sentence}}
+```
+</details>
+<details style="margin-left: 5px;">
+<summary style="color: black;">Improved prompt :heart_eyes:</summary>
+```
+You are an intelligent text classification system specialized in matching sentences to Wikipedia article titles. Your task is to identify which Wikipedia article a given sentence most likely belongs to, based on a provided list of article titles.
+
+First, review the following list of Wikipedia article titles:
+<article_titles>
+{{titles}}
+</article_titles>
+
+Now, consider this sentence that needs to be classified:
+<sentence_to_classify>
+{{sentence}}
+</sentence_to_classify>
+
+Your goal is to determine which article title from the provided list best matches the given sentence. Follow these steps:
+
+1. List the key concepts from the sentence
+2. Compare each key concept with the article titles
+3. Rank the top 3 most relevant titles and explain why they are relevant
+4. Select the most appropriate article title that best encompasses or relates to the sentence's content
+
+Wrap your analysis in <analysis> tags. Include the following:
+- List of key concepts from the sentence
+- Comparison of each key concept with the article titles
+- Ranking of top 3 most relevant titles with explanations
+- Your final choice and reasoning
+
+After your analysis, provide your final answer: the single most appropriate Wikipedia article title from the list.
+
+Output only the chosen article title, without any additional text or explanation.
+```
+</details>
+</details>
+
+::: {.content-visible when-format="html"}
+<details>
+<summary style="color: black;">use XML tags to help the assistant parse your prompts</summary>
+<details style="margin-left: 5px;">
+<summary style="color: black;">XML tip</summary>
+```
+Use tags like <instructions>, <example>, and <formatting> to clearly separate different parts of your prompt. This prevents Claude from mixing up instructions with examples or context.
+```
+</details>
+<details style="margin-left: 5px;">
+<summary style="color: black;">XML power use tip</summary>
+```
+Combine XML tags with other techniques like multishot prompting (<examples>) or chain of thought (<thinking>, <answer>). This creates super-structured, high-performance prompts.
+```
+</details>
+<details style="margin-left: 5px;">
+<summary style="color: black;">XML in practice</summary>
+```
+You’re a financial analyst at AcmeCorp. Generate a Q2 financial report for our investors.
+
+AcmeCorp is a B2B SaaS company. Our investors value transparency and actionable insights.
+
+Use this data for your report:<data>{{SPREADSHEET_DATA}}</data>
+
+<instructions>
+1. Include sections: Revenue Growth, Profit Margins, Cash Flow.
+2. Highlight strengths and areas for improvement.
+</instructions>
+
+Make your tone concise and professional. Follow this structure:
+<formatting_example>{{Q1_REPORT}}</formatting_example>
+```
+</details>
+</details>
+:::
+
+::: {.content-visible when-format="html"}
+<details>
+<summary style="color: black;">Going back to role play prompting</summary>
+```
+<context>
+You are an expert mechanical engineer with 15+ years of experience in automotive design and manufacturing processes. You have:
+- Led design teams at major automotive companies
+- Deep knowledge of materials science and structural mechanics
+- Experience with both conventional and electric vehicle architectures
+- Expertise in manufacturing optimization and quality control systems
+</context>
+
+<constraints>
+- Always explain engineering concepts using precise technical terminology
+- Support recommendations with relevant engineering principles
+- Consider both theoretical and practical manufacturing limitations
+- When discussing specifications, include relevant industry standards
+- If unsure about specific details, acknowledge limitations and explain general principles
+</constraints>
+
+<tone>
+Professional and technical, but able to explain complex concepts clearly to both experts and non-experts.
+</tone>
+```
+</details>
+:::
+
+::: {.content-visible when-format="html"}
+<details>
+<summary style="color: black;">Be proactive and keep on learning</summary>
+:books: Prompt [library](https://docs.anthropic.com/en/prompt-library/library)<br>
+:mortar_board: Anthropic [courses](https://github.com/anthropics/courses?tab=readme-ov-file)<br>
+:eyes: [OpenAI](https://platform.openai.com/docs/guides/prompt-engineering) and [GitHub Copilot](https://docs.github.com/en/copilot/using-github-copilot/prompt-engineering-for-github-copilot) prompt engineering best practices<br>
+:mag_right: Practice makes you better
+</details>
+:::
 
 ::: {.notes}
+* Testing multiple models if needed (Claude 3.5 Sonnet, Claude 3 Opus, GPT-4o, GPT-o1, ...)
 * Example - You want to discuss about an equation, use LaTex instead of giving a screenshot, the models understands LaTex
 :::
 
-# Images, audio and notes {background-color="#335c67"} 
+## One more thing
+
+Refrain from sharing everything in your prompts :grimacing: <br><br>
+
+-   Personal or private information (e.g. full names, phone numbers, email addresses)
+-   Sensitive information (e.g. financial information)
+-   Private medical information
+-   Copyrighted or trademarked material (e.g. subscription-only content, licensed software code)
+-   Credentials (e.g. an API key, a password left in a code)
+-   ...
+
+# Images, audios and notes {background-color="#335c67"} 
+
+Generative AI at its worst and best
 
 ## Image generation from text or image
 
 * [Bing Chat](https://www.bing.com/images/create), [Dall-E](https://openai.com/index/dall-e-3/), [Midjourney](https://www.midjourney.com/home)
 * Open weights models - [Flux](https://blackforestlabs.ai/), [Stable Diffusion](https://stability.ai/) (you'll need a decent GPU)
-* [Perchance AI](https://perchance.org/ai-text-to-image-generator) (free tool)
+* [Perchance AI](https://perchance.org/ai-text-to-image-generator) (it's free, :point_right: try it !)
 * [Prompt generator for image](https://huggingface.co/spaces/gokaygokay/FLUX-Prompt-Generator)
 * Video models are starting to be really good ([Runway Gen-2](https://www.youtube.com/watch?v=71-yl2SYQpg), [ChatGPT Sora](https://www.youtube.com/watch?v=HK6y8DAPN_0))
 
@@ -533,10 +692,35 @@ short prompt: Ocean wind farms and solar panels in between. Focus on the solar p
 long prompt: Vast North Sea landscape with towering wind turbines and expansive solar panels stretching into the horizon, capturing the serene yet powerful energy of the ocean. Clear blue sky with wispy clouds, sunlight casting soft shadows. Solar panels glisten under the natural daylight, reflecting the azure waters. Cinematic wide shot with deep focus, inspired by the visual style of Christopher Nolan. Crisp, high-resolution image with minimal film grain, cool color grading emphasizing the technology and sustainability.
 :::
 
+::: {style="position:absolute;top:50%;left:0%;"}
+::: {.r-stack}
+![](images/ecompv.png){.fragment width="450" height="300"}
+
+![](images/mussels.png){.fragment width="450" height="300"}
+
+![](images/ammoniac.png){.fragment width="450" height="300"}
+
+![](images/og_penguins.png){.fragment width="450" height="300"}
+
+![](images/ecomod_logo.png){.fragment width="450" height="300"}
+
+![](images/mfc_logo.png){.fragment width="450" height="300"}
+
+![](images/mfc_logo2.png){.fragment width="450" height="300"}
+
+![](images/sumo_logo1.png){.fragment width="450" height="300"}
+
+![](images/sumo_logo2.png){.fragment width="450" height="300"}
+
+![](images/sumo_logo3.png){.fragment width="450" height="300"}
+:::
+:::
+
+
 ## Audio generation from text
 
 - [NotebookLM](https://notebooklm.google/) - podcast
-{{< audio file="audio/converse_podcast.mp3" caption="Century-scale carbon sequestration flux throughout the ocean by the biological pump">}}
+{{< audio file="audio/converse_podcast.mp3" caption="From a paper (Ricour et al., 2023) on carbon sequestration fluxes (the full podcast is 10 min long)">}}
 - [Suno](https://suno.com/), [udio](https://www.udio.com/) - music
 {{< audio file="audio/coherens.mp3" caption="Based on COHERENS's documentation">}}
 
@@ -555,14 +739,113 @@ with [NotebookLM](https://notebooklm.google/), powered by Gemini 1.5
 prepare presentations? At least you can check the outline of the presentation and see if it makes sense at that your key message is represented.
 :::
 
-# Coding can be fast, really fast {background-color="#335c67"}
+# Coding can be fast {background-color="#335c67"}
+
+Really fast.
 
 ## It feels like coding with 4 hands 
 
-## Shiny app built from scratch hello
+With [GitHub Copilot](https://github.com/features/copilot)
+
+<!-- ![](gif/copilot_part1.gif) -->
+
+<video controls width="900" height="540">
+  <source src="./mp4/copilot_part1.mp4" type="video/mp4">
+</video>
+
+## Autocomplete, chat and command
+
+<!-- ![](gif/copilot_part2.gif) -->
+
+<video controls width="900" height="540">
+  <source src="./mp4/copilot_part2.mp4" type="video/mp4">
+</video>
+
+::: {.fragment .fade-in}
+[Codeium](https://codeium.com/) is also an alternative to GitHub Copilot
+:::
+
+## Shiny app built from scratch
 
 Amazingly fast.
 
-![](gif/shiny.gif)
+<video controls width="900" height="540">
+  <source src="./mp4/shiny.mp4" type="video/mp4">
+</video>
 
-# Lunch time ! {background-color="#335c67"}
+<!-- ![](gif/shiny.gif) -->
+
+## New to Shiny? :point_right: [Try it](https://gallery.shinyapps.io/assistant/?email=florian.ricour%40naturalsciences.be&sig=4fc526dbed8fb8e702dce89edc1a13629c9132486ed923112b45ac3fca46ae99){preview-link="true"}!
+
+A quick prompt - not strictly following the best practices !
+
+```{.R code-copy=true}
+Build an app with 
+
+Dynamic dataset selection between built-in R datasets such as
+<datasets>
+quakes, iris, faithful, airquality, mtcars, CO2, USArrests and women
+</datasets>
+Automatic UI updates based on selected data
+
+Multiple visualization options:
+- Scatter plots with trend lines
+- Box plots
+- Violin plots
+
+Interactive features:
+- Variable selection for both axes
+- Sample size control
+- Data preview table
+- Summary statistics
+```
+
+## [Artifacts](https://support.anthropic.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them), a dedicated space for code
+
+<video controls width="600" height="480">
+  <source src="./mp4/mermaid.mp4" type="video/mp4">
+</video>
+
+::: {.fragment .fade-in}
+::: {style="position:absolute;top:27%;left:55%;"}
+* Documents (markdown or plain text)
+* Code snippets (will not run except for some)
+* Websites (HTML pages)
+* SVG images
+* Diagrams (e.g. mermaid flowcharts)
+* Interactive React components
+:::
+:::
+
+::: {.fragment .fade-in}
+::: {style="position:absolute;top:85%;left:0%;"}
+:eyes: I am not paid by Anthropic to promote Claude
+:::
+:::
+
+## A rapidly evolving ecosystem :running:
+
+Based on [Claude](https://www.anthropic.com/news/) (but the same applies for chatGPT & Co)
+
+* Claude 3.5 Sonnet (Jun 21, 2024)
+* Artifacts (Aug 27, 2024)
+* Upgrade Claude 3.5 Sonnet (Oct 22, 2024)
+* [Analysis tool](https://www.anthropic.com/news/analysis-tool) (Oct 24, 2024) - *Analyzing and visualizing data from CSV files*
+* Claude 3.5 Sonnet on Github Copilot
+* [Model Context Protocol](https://www.anthropic.com/news/model-context-protocol) (Nov 25, 2024) - *Connecting AI to data sources (Web, VScode, GitHub, ...)*
+
+::: {.fragment .fade-in}
+<span style="color: white;font-size: 24px;background-color:#335c67;border-radius: 10px">Next step</span>, AI agents
+:::
+
+## This is a personal conclusion :information_desk_person:
+
+1.  Get on the train or be left at the station
+2.  See it as an investment if the learning curve scares you
+3.  Keep on learning - it's moving (way too) fast
+4.  AI agents are coming (for you), be prepared
+5.  Come back to this presentation in 2-3 years
+
+# Feedback welcome ! {background-color="#335c67"}
+
+# {background-image="https://media.giphy.com/media/3ohzdFCn9mYfmuAmEU/giphy.gif?cid=790b7611828zm4yal1njxp3a2v8uy0jrotuaxiu3j8p8hr3u&ep=v1_gifs_search&rid=giphy.gif&ct=g"}
